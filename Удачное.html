@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Конный клуб "Удачное"</title>
+    <link rel="SHORTCUT ICON" href="fav.ico" type="image/x-icon">
+    <style>
+        main {
+        width: 100vw;
+        height: 100vh;
+        position: relative;
+        /*background-image:url(fon.jpeg);*/
+        background-size:cover;
+        overflow-y:auto;
+        margin: 0 auto;
+        }
+        summary {width: 500px; margin: 0 auto}
+        .Two {width: 450px;vertical-align: middle;}
+        .OneThree {width: 300px; vertical-align: middle;}
+        #k1,#k2,#k3 {
+            position: relative;
+        }
+        
+        #fon {
+        width: 100vw;
+        height: 100vh;
+        position: absolute;
+        }
+        details {
+            /*outline:2px solid lime;*/
+            width: 100vw;
+            text-align: center;
+        }
+        #fon img{
+            width: 100vw;
+            filter: blur(0px); 
+            transition: filter 1s;
+        }
+        #menu{
+            width: 100vw;
+        height: 100vh;
+        position: absolute;
+        }
+        #slider {
+            position: relative;
+
+        }
+    </style>
+</head>
+<body style="widows: 100pt">
+    <main>
+        <div id="fon">
+            <img src="fon.jpeg">
+        </div>
+    <div id="menu">    
+    <h1 style="text-align:center;font-family:Arial">Конный клуб "Удачное"</h1>
+    <p style="text-align:center;font-weight:1000;font-size:18pt;font-family:Times New Roman;width:500px;margin: 0 auto;">
+        <details id="d1" onClick="chg(event)"><summary>Конные прогулки.<br></summary>
+            <div id="slider" style="display:inline-block">
+            <img src="Удачное/Конные прогулки/IMG_6937.JPG" class="OneThree" id="k1">
+            <img src="Удачное/Конные прогулки/IMG_6940.JPG" class="Two" id="k2">
+            <img src="Удачное/Конные прогулки/IMG_6942.JPG" class="OneThree" id="k3">
+            </div>
+            </details>
+            <script>
+                k2.onclick=function(){
+                    document.querySelector("#k1").src="Удачное/Конные прогулки/IMG_6942.JPG"
+                    document.querySelector("#k2").src="Удачное/Конные прогулки/IMG_6937.JPG"
+                    document.querySelector("#k3").src="Удачное/Конные прогулки/IMG_6940.JPG"
+
+                }               
+                k2.onmouseup=function (event) {
+                    alert("up"+event.clientX+':'+event.clientY)
+                }
+                k2.onmousedown=function (event) {
+                    //alert("down"+event.clientX+':'+event.clientY)
+                }
+             </script>
+        <details><summary>Аренда денников.<br></summary>
+            </details>
+        <details><summary>Тренировки в крытом манеже,<br></summary>
+            </details>
+        <details><summary>на плацу,<br></summary>
+            </details>
+        <details><summary>в бочке и в авто-шагалке.<br></summary>
+            </details>
+        </p>
+        </div>
+</main>
+<script>
+    function chg(event){
+        if (event.target.tagName == "SUMMARY"){
+        if (document.querySelector("#d1").open == false) {
+            
+            document.querySelector("#fon img").style.filter="blur(5px)"
+        }
+        if (document.querySelector("#d1").open == true) {document.querySelector("#fon img").style.filter="blur(0px)"}
+    }}
+</script>
+</body>
+</html>
